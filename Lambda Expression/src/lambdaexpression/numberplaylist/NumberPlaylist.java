@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberPlaylist {
 	
@@ -57,6 +58,13 @@ public class NumberPlaylist {
 		Function<Integer, Double> toDoubleFunction = Integer::doubleValue;
 		myNumberList.forEach(n -> {
 			System.out.println("Method 6 :\tforEach Lambda double Value :: " + toDoubleFunction.apply(n));
+		});
+		
+		
+		//Method 7 : Implicit Lambda function to Check Even Numbers
+		Predicate<Integer> isEvenFunction = n -> n > 0 && n%2 == 0;
+		myNumberList.forEach(n -> {
+			System.out.println("Method 7 :\tforEach Value : " + n + "\ttest if Even  : " + isEvenFunction.test(n));
 		});
 	}
 }
