@@ -66,5 +66,11 @@ public class NumberPlaylist {
 		myNumberList.forEach(n -> {
 			System.out.println("Method 7 :\tforEach Value : " + n + "\ttest if Even  : " + isEvenFunction.test(n));
 		});
+		
+		
+		//Create Stream and iterate
+		myNumberList.stream().forEach( n -> {
+			System.out.println("Stream\tforEach Value : " + n);
+		});
 	}
 }
