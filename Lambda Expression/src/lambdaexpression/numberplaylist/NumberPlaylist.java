@@ -97,9 +97,15 @@ public class NumberPlaylist {
 		System.out.println("Stream\tPrinting Minimum Even from List : " + min);
 
 		
-		//Process the Stream, Find minimum from the stream, Store the result
+		//Process the Stream, Find maximum from the stream, Store the result
 		Integer max = myNumberList.stream().filter(isEvenFunction).max(Comparator.comparing(Integer::intValue)).orElse(null);
 		System.out.println("Stream\tPrinting Maximum Even from List : " + max);
+
+		
+		//Process the Stream, Find sum and average of the stream, Store the result
+		Integer sum = myNumberList.stream().reduce(0, Integer::sum);
+		long count = myNumberList.stream().count();
+		System.out.println("Stream\tPrinting Average of " + sum + "/" + count + " : " + sum/count);
 
 	}
 }
