@@ -84,5 +84,10 @@ public class NumberPlaylist {
 		//Process the Stream, Apply Even Filter on the stream, Store the result
 		List<Integer> evenList = myNumberList.stream().filter(isEvenFunction).collect(Collectors.toList());
 		System.out.println("Stream\tPrinting Even List : " + evenList);
+		
+		
+		//Process the Stream, Apply Find First and Even Filter on the stream, Store the result
+		Integer firstEven = myNumberList.stream().filter(isEvenFunction).peek(n -> System.out.println("Peak Even Number : "+n)).findFirst().orElse(null);
+		System.out.println("Stream\tPrinting First Even from List : " + firstEven);
 	}
 }
