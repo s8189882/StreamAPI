@@ -78,7 +78,7 @@ public class NumberPlaylist {
 		
 		
 		//Process the Stream, Apply Double operation on the stream, Store the result
-		myNumberList.stream().map(toDoubleFunction).forEach(System.out::println);
-
+		List<Double> doubleList = myNumberList.stream().map(toDoubleFunction).collect(Collectors.toList());
+		System.out.println("Stream\tPrinting Double List : " + doubleList);
 	}
 }
