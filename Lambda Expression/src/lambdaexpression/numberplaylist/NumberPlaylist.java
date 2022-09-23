@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class NumberPlaylist {
@@ -80,5 +79,10 @@ public class NumberPlaylist {
 		//Process the Stream, Apply Double operation on the stream, Store the result
 		List<Double> doubleList = myNumberList.stream().map(toDoubleFunction).collect(Collectors.toList());
 		System.out.println("Stream\tPrinting Double List : " + doubleList);
+		
+		
+		//Process the Stream, Apply Even Filter on the stream, Store the result
+		List<Integer> evenList = myNumberList.stream().filter(isEvenFunction).collect(Collectors.toList());
+		System.out.println("Stream\tPrinting Even List : " + evenList);
 	}
 }
