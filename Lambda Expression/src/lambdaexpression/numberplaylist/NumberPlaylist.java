@@ -2,9 +2,12 @@ package lambdaexpression.numberplaylist;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class NumberPlaylist {
 	
@@ -72,5 +75,10 @@ public class NumberPlaylist {
 		myNumberList.stream().forEach( n -> {
 			System.out.println("Stream\tforEach Value : " + n);
 		});
+		
+		
+		//Process the Stream, Apply Double operation on the stream, Store the result
+		myNumberList.stream().map(toDoubleFunction).forEach(System.out::println);
+
 	}
 }
