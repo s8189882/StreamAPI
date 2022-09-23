@@ -107,5 +107,13 @@ public class NumberPlaylist {
 		long count = myNumberList.stream().count();
 		System.out.println("Stream\tPrinting Average of " + sum + "/" + count + " : " + sum/count);
 
+		
+		//Process the Stream, Find all Even, single Even or none divisible by 10, Store the result
+		boolean allEven = myNumberList.stream().allMatch(isEvenFunction);
+		boolean oneEven = myNumberList.stream().anyMatch(isEvenFunction);
+		boolean noneMultipleOfTen = myNumberList.stream().noneMatch(i -> i>0 && i%10 == 0);
+		System.out.println("Stream\tAre all Even : " + allEven);
+		System.out.println("Stream\tIs any one Even : " + oneEven);
+		System.out.println("Stream\tAre None divisible by 10 : " + noneMultipleOfTen);
 	}
 }
