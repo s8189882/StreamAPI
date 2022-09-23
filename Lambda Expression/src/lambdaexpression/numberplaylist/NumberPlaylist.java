@@ -115,5 +115,10 @@ public class NumberPlaylist {
 		System.out.println("Stream\tAre all Even : " + allEven);
 		System.out.println("Stream\tIs any one Even : " + oneEven);
 		System.out.println("Stream\tAre None divisible by 10 : " + noneMultipleOfTen);
+		
+		
+		//Process the Stream, Sort the stream, Store the result
+		List<Integer> sortedList = myNumberList.stream().sorted((n1, n2) -> n1.compareTo(n2)).collect(Collectors.toList());
+		System.out.println("Stream\tSorted Stream : " + sortedList);
 	}
 }
